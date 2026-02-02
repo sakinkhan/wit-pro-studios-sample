@@ -38,8 +38,8 @@ export const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up opacity-0 [animation-delay:600ms]">
-            Rehearse. Record. Rock. Located in the heart of Belconnen,
-            we've been serving Canberra's creative community for decades.
+            Rehearse. Record. Rock. Located in the heart of Belconnen, we've
+            been serving Canberra's creative community for decades.
           </p>
 
           {/* CTA Buttons */}
@@ -47,18 +47,22 @@ export const Hero = () => {
             <Button size="lg" className="btn-primary text-lg px-8 py-6">
               Book a Room
             </Button>
-            <Button size="lg" variant="outline" className="btn-outline text-lg px-8 py-6">
+            <Button
+              size="lg"
+              variant="outline"
+              className="btn-outline text-lg px-8 py-6"
+            >
               Explore Services
             </Button>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
             <ArrowDown size={32} />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );
