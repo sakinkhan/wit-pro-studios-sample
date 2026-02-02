@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Witness Protection Studios - Industrial Rock Design System */
+
+@layer base {
+  :root {
+    /* Core dark theme - always dark for this brand */
+    --background: 0 0% 5%;
+    --foreground: 40 20% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 20% 95%;
+
+    /* Electric Orange - Primary brand color */
+    --primary: 32 100% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    /* Muted gold secondary */
+    --secondary: 40 30% 15%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 32 100% 50%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 32 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom brand variables */
+    --glow-primary: 32 100% 50%;
+    --glow-secondary: 45 100% 60%;
+    --surface-elevated: 0 0% 10%;
+    --text-dim: 40 10% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 40 20% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 40 20% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 32 100% 50%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 40 30% 15%;
+    --secondary-foreground: 40 20% 90%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 40 10% 60%;
+    --accent: 32 100% 50%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 32 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-amber-400 to-primary bg-clip-text text-transparent;
+  }
+
+  .glow-box {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:scale-[1.02] hover:glow-box;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-display text-lg tracking-wide 
+           hover:bg-primary/90 transition-all duration-300 
+           shadow-lg shadow-primary/20 hover:shadow-primary/40;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-display text-lg tracking-wide
+           hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
